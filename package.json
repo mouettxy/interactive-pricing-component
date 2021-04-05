@@ -1,0 +1,27 @@
+{
+  "name": "interactive-pricing-component",
+  "version": "1.0.0",
+  "description": "https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8",
+  "main": "index.js",
+  "author": "mouettxy",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel -p 8080 watch public/index.html"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.2.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.8.0",
+    "prettier": "^2.2.1",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "vue": "^2.6.12",
+    "vue-hot-reload-api": "^2.3.4"
+  }
+}
