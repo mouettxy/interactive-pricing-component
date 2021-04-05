@@ -1,8 +1,5 @@
-import Vue from 'vue'
-import App from './app'
+import { createApp } from 'vue'
+import App from './app.vue'
 import './assets/css/index.css'
 
-new Vue({
-  el: '#app',
-  render: (h) => h(App),
-})
+createApp(App).mount('#app')

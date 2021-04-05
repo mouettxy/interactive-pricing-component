@@ -1,18 +1,18 @@
 {
   "name": "interactive-pricing-component",
-  "version": "1.0.0",
-  "description": "https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8",
-  "main": "index.js",
-  "author": "mouettxy",
-  "license": "MIT",
+  "version": "0.0.0",
   "scripts": {
-    "dev": "parcel -p 8080 watch public/index.html"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
+  "dependencies": {
+    "vue": "3.0.5"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.2.0",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "3.0.5",
+    "autoprefixer": "^10.2.5",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
@@ -20,16 +20,9 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.8.0",
+    "postcss": "^8.2.9",
     "prettier": "^2.2.1",
-    "vue-template-compiler": "^2.6.12"
-  },
-  "dependencies": {
-    "@tailwindcss/forms": "^0.3.2",
-    "@tailwindcss/postcss7-compat": "^2.0.4",
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue": "^2.6.12",
-    "vue-hot-reload-api": "^2.3.4"
+    "tailwindcss": "^2.1.0",
+    "vite": "^2.1.5"
   }
 }

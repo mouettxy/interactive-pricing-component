@@ -21,3 +21,7 @@ design
 .cache
 node_modules
 style-guide.md
+node_modules
+dist
+dist-ssr
+*.local

@@ -1,8 +1,8 @@
 <template>
   <div>
     <label :for="checkboxId" class="cursor-pointer">
-      <div class="transition-colors bg-light-grayish-blue-2 rounded-3xl p-1 w-12 hover:bg-soft-cyan relative">
-        <div class="bg-white w-4 h-4 rounded-full transition-transform transform" :class="activeTriggerClasses"></div>
+      <div class="relative w-12 p-1 transition-colors bg-light-grayish-blue-2 rounded-3xl hover:bg-soft-cyan">
+        <div class="w-4 h-4 transition-transform transform bg-white rounded-full" :class="activeTriggerClasses"></div>
       </div>
       <input :id="checkboxId" v-model="model" class="hidden" type="checkbox" />
     </label>
@@ -17,26 +17,23 @@ export default {
 
   mixins: [uuid],
 
-  model: {
-    prop: 'value',
-    event: 'input',
-  },
-
   props: {
-    value: {
+    modelValue: {
       required: true,
       type: Boolean,
     },
   },
 
+  emits: ['update:modelValue'],
+
   computed: {
     model: {
       get() {
-        return this.value
+        return this.modelValue
       },
 
       set(value) {
-        this.$emit('input', value)
+        this.$emit('update:modelValue', value)
       },
     },
 
@@ -45,7 +42,7 @@ export default {
     },
 
     activeTriggerClasses() {
-      if (this.value) {
+      if (this.model) {
         return {
           'translate-x-6': true,
         }
