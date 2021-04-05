@@ -1,4 +1,3 @@
 {
-  "main": "src/main.js",
-  "source": true
+  "presets": ["env"]
 }

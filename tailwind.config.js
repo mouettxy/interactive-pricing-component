@@ -1,22 +1,29 @@
 module.exports = {
   darkMode: false,
+  plugins: [require('@tailwindcss/forms')],
   theme: {
     screens: {
       sm: '375px',
       lg: '1440px',
     },
+
     fontWeight: {
       normal: 600,
       bold: 800,
     },
     extend: {
+      backgroundImage: {
+        'title-circles': 'var(--images-title-circles)',
+        'background-pattern': 'var(--images-bg-pattern)',
+        'icon-slider': 'var(--images-icon-slider)',
+        'icon-check': 'var(--images-icon-check)',
+      },
       colors: {
         'soft-cyan': 'var(--color-soft-cyan)',
         'strong-cyan': 'var(--color-strong-cyan)',
         'light-grayish-red': 'var(--color-light-grayish-red)',
         'light-red': 'var(--color-light-red)',
         'pale-blue': 'var(--color-pale-blue)',
-
         white: 'var(--color-white)',
         'very-pale-blue': 'var(--color-very-pale-blue)',
         'light-grayish-blue': 'var(--color-light-grayish-blue)',
