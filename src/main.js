@@ -3,5 +3,6 @@ import App from './app'
 import './assets/css/index.css'
 
 new Vue({
+  el: '#app',
   render: (h) => h(App),
-}).$mount('#app')
+})
