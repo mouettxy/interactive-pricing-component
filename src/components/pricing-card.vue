@@ -7,7 +7,7 @@
       </div>
 
       <p class="flex items-center gap-2">
-        <span class="text-3xl font-bold text-dark-desaturated-blue">${{ formattedPrice }}</span>
+        <span class="text-3xl font-bold text-dark-desaturated-blue">${{ calculatedPrice }}</span>
         <span class="text-xl text-grayish-blue">/ month</span>
       </p>
       <div class="flex gap-4 text-grayish-blue">
@@ -31,7 +31,9 @@
           <p class="c-text-base">{{ pros }}</p>
         </div>
       </div>
-      <base-button class="px-16 py-3 font-bold bg-dark-desaturated-blue text-pale-blue rounded-3xl">
+      <base-button
+        class="px-16 py-3 font-bold transition-colors bg-dark-desaturated-blue text-pale-blue rounded-3xl focus:outline-none hover:text-white hover:bg-dark-desaturated-blue"
+      >
         Start my trial
       </base-button>
     </footer>
@@ -52,20 +54,43 @@ export default {
   data: () => ({
     companyPros: ['Unlimited websites', '100% data ownership', 'Email reports'],
 
-    price: 16,
     discount: 25,
 
     yearlyBilling: false,
-    sliderPageviews: '50',
+    sliderPageviews: 50,
   }),
 
   computed: {
-    formattedPrice() {
-      return this.price.toFixed(2)
+    calculatedPrice() {
+      let price = 8
+
+      if (this.sliderPageviews >= 10 && this.sliderPageviews < 50) {
+        price = 8
+      } else if (this.sliderPageviews >= 50 && this.sliderPageviews < 100) {
+        price = 12
+      } else if (this.sliderPageviews >= 100 && this.sliderPageviews < 500) {
+        price = 16
+      } else if (this.sliderPageviews >= 500 && this.sliderPageviews < 1000) {
+        price = 24
+      } else if (this.sliderPageviews >= 1000) {
+        price = 36
+      }
+
+      if (this.yearlyBilling) {
+        price -= price * 0.25
+      }
+
+      return price.toFixed(2)
     },
 
     formattedPageviews() {
-      return Math.round(parseInt(this.sliderPageviews) * 2).toFixed(0) + 'k'
+      const calculated = Math.round(this.sliderPageviews)
+
+      if (calculated >= 1000) {
+        return `${calculated / 1000}m`
+      }
+
+      return `${calculated}k`
     },
   },
 }
