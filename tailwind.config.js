@@ -12,6 +12,11 @@ module.exports = {
       normal: 600,
       bold: 800,
     },
+
+    boxShadow: {
+      'slider-trigger': '0 8px 8px hsl(174, 77%, 80%)',
+    },
+
     extend: {
       backgroundImage: {
         'title-circles': 'var(--images-title-circles)',
