@@ -9,6 +9,7 @@
       @focus="handleFocus"
       @blur="handleBlur"
       @mousedown="handleMousedown"
+      @touchstart="handleTouchstart"
       :style="{ left: `${offset}%` }"
       ref="trigger"
     ></button>
@@ -83,6 +84,31 @@ export default {
       isFocused.value = false
     }
 
+    const handleTouchstart = (e) => {
+      isActive.value = true
+
+      const startX = e.touches[0].pageX
+
+      const startWidth = model.value
+
+      const onTouchMove = (moveEvt) => {
+        const diffInPx = moveEvt.touches[0].pageX - startX
+        const diffInEm = diffInPx
+
+        model.value = startWidth + diffInEm
+      }
+
+      const onTouchEnd = () => {
+        isActive.value = false
+
+        document.removeEventListener('touchmove', onTouchMove)
+        document.removeEventListener('touchend', onTouchEnd)
+      }
+
+      document.addEventListener('touchmove', onTouchMove)
+      document.addEventListener('touchend', onTouchEnd)
+    }
+
     const handleMousedown = (e) => {
       isActive.value = true
 
@@ -136,12 +162,13 @@ export default {
       handleFocus,
       handleBlur,
       handleMousedown,
+      handleTouchstart,
     }
   },
 }
 </script>
 
-<style>
+<style lang="postcss">
 .base-slider__trigger {
   @apply absolute;
   @apply top-0;

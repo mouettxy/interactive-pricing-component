@@ -1,21 +1,9 @@
 <template>
-  <main class="bg-background-pattern bg-no-repeat bg-contain flex h-full justify-center items-center flex-col">
+  <main class="flex flex-col items-center justify-center h-full bg-no-repeat bg-100-50 bg-background-pattern lg:gap-4">
     <pricing-title></pricing-title>
-    <div class="pricing-card--wrapper">
+    <div class="flex justify-center lg:min-w-[35%] sm:min-w-[85%]">
       <pricing-card></pricing-card>
     </div>
-    <!-- 
-      Sign-up for our 30-day trial. No credit card required. Pageviews $ /month Monthly
-    Billing Yearly Billing 25% discount Unlimited websites 100% data ownership Email reports Start my trial
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
-      . Coded by
-      <a href="#">Your Name Here</a>
-      .
-    </div>
-    -->
   </main>
 </template>
 
@@ -28,9 +16,3 @@ export default {
   components: { pricingTitle, pricingCard },
 }
 </script>
-
-<style>
-.pricing-card--wrapper {
-  width: 80%;
-}
-</style>
