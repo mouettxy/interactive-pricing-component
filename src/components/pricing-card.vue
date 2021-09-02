@@ -23,15 +23,15 @@
       <div class="flex items-center gap-4 sm:text-sm text-grayish-blue">
         <span>Monthly billing</span>
         <base-switch v-model="yearlyBilling"></base-switch>
-        <span class="relative block">
-          Yearly billing
+        <div class="relative block">
+          <span>Yearly billing</span>
           <span
-            class="absolute -right-11 lg:-right-28 sm:text-xs lg:top-0.5 bg-light-grayish-red text-light-red rounded-3xl px-2 py-0.5 font-bold text-sm"
+            class="sm:text-xs bg-light-grayish-red text-light-red absolute whitespace-nowrap left-[calc(100%+1rem)] rounded-3xl px-2 py-0.5 font-bold text-sm"
           >
             -{{ discount }}%
             <span class="sm:hidden">&nbsp;discount</span>
           </span>
-        </span>
+        </div>
       </div>
     </main>
 
