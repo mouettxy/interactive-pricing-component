@@ -11,7 +11,7 @@
       </div>
 
       <div class="w-full px-8">
-        <base-slider v-model="sliderPageviews"></base-slider>
+        <base-slider v-model="sliderPageviews" />
       </div>
 
       <pricing-card-price
